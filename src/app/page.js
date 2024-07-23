@@ -1,6 +1,5 @@
 import React from "react";
 
-import Header from "@/components/Header";
 import Cards from "@/components/home/cards/Cards";
 import { Icon } from "@iconify/react";
 import Video from "@/components/home/Video";
@@ -10,12 +9,10 @@ import Map from "@/components/home/Map";
 import VideoSecundary from "@/components/home/VideoSecundary";
 import Activities from "@/components/home/activities/Activities";
 import SocialPosts from "@/components/home/SocialPosts";
-import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   return (
     <main className="bg-gray-100">
-      {/* <Header /> */}
       <Video />
       <MainText
         text={
@@ -40,7 +37,6 @@ export default function Home() {
       <VideoSecundary />
       <Activities />
       <SocialPosts />
-      {/* <Footer /> */}
     </main>
   );
 }

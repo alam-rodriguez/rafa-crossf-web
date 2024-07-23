@@ -71,6 +71,7 @@ const page = () => {
 
 export default page;
 
+// eslint-disable-next-line react/prop-types
 const ClassType = ({ icon, text, color }) => {
   return (
     <div className="w-20 h-2- border-4- bg-slate-700 uppercase ">

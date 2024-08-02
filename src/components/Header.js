@@ -108,10 +108,10 @@ const Header = () => {
     setShowSubMenu(false);
   };
 
-  if (width < 1137) {
+  if (width < 1050) {
     return (
       <nav className="fixed w-full z-10">
-        <div className="bg-black flex justify-between items-center text-white px-12  z-20">
+        <div className="bg-black flex justify-between items-center text-white px-6  z-20">
           <Image
             onClick={handleClicGoHome}
             className="h-20 w-auto"
@@ -182,7 +182,7 @@ const Header = () => {
     );
   } else {
     return (
-      <nav className="bg-black flex justify-between items-center text-white px-12 fixed w-full z-10">
+      <nav className="bg-black flex justify-between items-center text-white px-6 fixed w-full z-10">
         <div>
           <Image
             onClick={handleClicGoHome}

@@ -21,7 +21,9 @@ const page = () => {
             <MainTextHead text="¡Obtén una sesión de entrenamiento gratuita y renueva tu rutina de ejercicios hoy mismo!" />
 
             <Text text="Disfruta de una sesión de entrenamiento gratuita con uno de nuestros increíbles entrenadores personales para sacar lo mejor de ti con un entrenamiento divertido y lleno de energía que te ayudará a alcanzar tus objetivos. Ya sea que quieras perder peso, aumentar tu fuerza, entrenar para un evento de año nuevo o simplemente obtener ese empujón adicional para renovar tu rutina, estamos aquí para ayudarte." />
-            <Button>Obten una sesión de formación gratuita</Button>
+            <Button className="text-wrap">
+              Obten una sesión de formación gratuita
+            </Button>
           </div>
         }
         padding="120px 40px"

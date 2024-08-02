@@ -156,13 +156,13 @@ const Header = () => {
                 CLASES
               </p>
               {showSubMenu == "CLASES" && (
-                <SubManu items={beneficios} setMenusFalse={setMenusFalse} />
+                <SubManu items={clases} setMenusFalse={setMenusFalse} />
               )}
               <p className="text-xs py-7" onClick={handleClickShowSubMenu}>
                 ENTRENAMIENTOS
               </p>
               {showSubMenu == "ENTRENAMIENTOS" && (
-                <SubManu items={beneficios} setMenusFalse={setMenusFalse} />
+                <SubManu items={entrenamientos} setMenusFalse={setMenusFalse} />
               )}
               <p className="text-xs py-7" onClick={handleClickShowSubMenu}>
                 ENTRENADORES
@@ -171,7 +171,7 @@ const Header = () => {
                 CONECTAR
               </p>
               {showSubMenu == "CONECTAR" && (
-                <SubManu items={beneficios} setMenusFalse={setMenusFalse} />
+                <SubManu items={conexiones} setMenusFalse={setMenusFalse} />
               )}
             </div>
           </div>

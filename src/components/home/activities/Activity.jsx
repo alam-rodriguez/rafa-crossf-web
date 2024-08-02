@@ -10,7 +10,10 @@ const Activity = ({ icon, activity, description }) => {
           className="w-14 border-0 bg-gray-300 mx-auto"
           style={{ height: 1.8 }}
         />
-        <h3 className="py-2 text-lg " style={{ letterSpacing: ".2em" }}>
+        <h3
+          className="py-2 text-lg uppercase"
+          style={{ letterSpacing: ".2em" }}
+        >
           {activity}
         </h3>
         <hr

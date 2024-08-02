@@ -6,39 +6,33 @@ import Text from "@/components/main-text/Text";
 import { Button } from "@nextui-org/react";
 import Card from "@/components/cards/Card";
 import Activity from "@/components/home/activities/Activity";
+import CardsList from "@/components/cards/CardsList";
 
 const page = () => {
   return (
     <>
       <ImagesMain
-        img="https://www.onelifefitness.com/hubfs/shutterstock_793611454.png"
-        text="PERSONAL TRAINING"
+        img="https://koacenter.es/wp-content/uploads/2018/04/Entrenador-personal-barcelona.jpg"
+        text="entrenadores personales"
       />
       <MainText
         text={
           <div>
-            <MainTextHead text="GET A COMPLIMENTARY TRAINING SESSION AND REFRESH YOUR WORKOUT ROUTINE TODAY!" />
+            <MainTextHead text="¡Obtén una sesión de entrenamiento gratuita y renueva tu rutina de ejercicios hoy mismo!" />
 
-            <Text
-              text="Enjoy a complimentary training session with one of our awesome
-              personal trainers to bring out your best with a fun, high energy
-              workout that’ll help you reach your goals. Whether you want to
-              lose weight, increase strength, train for a new year’s event or
-              just get that extra push to refresh your routine, we’re here to
-              help."
-            />
-            <Button>GET A FREE TRAINING SESSION</Button>
+            <Text text="Disfruta de una sesión de entrenamiento gratuita con uno de nuestros increíbles entrenadores personales para sacar lo mejor de ti con un entrenamiento divertido y lleno de energía que te ayudará a alcanzar tus objetivos. Ya sea que quieras perder peso, aumentar tu fuerza, entrenar para un evento de año nuevo o simplemente obtener ese empujón adicional para renovar tu rutina, estamos aquí para ayudarte." />
+            <Button>Obten una sesión de formación gratuita</Button>
           </div>
         }
         padding="120px 40px"
       />
 
-      <div className="py-24 px-3 max-w-screen-xl mx-auto">
+      <CardsList>
         <Card
           head="Alam Rodriguez"
           descripion="Alam Rodríguez es un entrenador personal altamente respetado y reconocido en la industria del fitness. Con más de una década de experiencia, Alam ha dedicado su vida a ayudar a personas de todas las edades y niveles de condición física a alcanzar sus objetivos de salud y bienestar."
           imageSide="left"
-          imageUrl="https://2094550.fs1.hubspotusercontent-na1.net/hub/2094550/hubfs/191117_OL_SS_Cycle_0218-EDITED-noalarm.jpg?length=1024&name=191117_OL_SS_Cycle_0218-EDITED-noalarm.jpg"
+          imageUrl="https://2094550.fs1.hubspotusercontent-na1.net/hub/2094550/hubfs/20OL_A%20Proven%20Formula_1000x1000.png?length=1024&name=20OL_A%20Proven%20Formula_1000x1000.png"
           btnText="OBTENER SESION"
           pathNativation="/entrenadores-personales/alam-rodriguez"
         />
@@ -46,7 +40,7 @@ const page = () => {
           head="Alam Rodriguez"
           descripion="Alam Rodríguez es un entrenador personal altamente respetado y reconocido en la industria del fitness. Con más de una década de experiencia, Alam ha dedicado su vida a ayudar a personas de todas las edades y niveles de condición física a alcanzar sus objetivos de salud y bienestar."
           imageSide="right"
-          imageUrl="https://2094550.fs1.hubspotusercontent-na1.net/hub/2094550/hubfs/191117_OL_SS_Cycle_0218-EDITED-noalarm.jpg?length=1024&name=191117_OL_SS_Cycle_0218-EDITED-noalarm.jpg"
+          imageUrl="https://2094550.fs1.hubspotusercontent-na1.net/hub/2094550/hubfs/20OL_Benefits_1000x1000.png?length=1024&name=20OL_Benefits_1000x1000.png"
           btnText="OBTENER SESION"
           pathNativation="/entrenadores-personales/alam-rodriguez"
         />
@@ -54,48 +48,50 @@ const page = () => {
           head="Alam Rodriguez"
           descripion="Alam Rodríguez es un entrenador personal altamente respetado y reconocido en la industria del fitness. Con más de una década de experiencia, Alam ha dedicado su vida a ayudar a personas de todas las edades y niveles de condición física a alcanzar sus objetivos de salud y bienestar."
           imageSide="left"
-          imageUrl="https://2094550.fs1.hubspotusercontent-na1.net/hub/2094550/hubfs/191117_OL_SS_Cycle_0218-EDITED-noalarm.jpg?length=1024&name=191117_OL_SS_Cycle_0218-EDITED-noalarm.jpg"
+          imageUrl="https://2094550.fs1.hubspotusercontent-na1.net/hub/2094550/hubfs/20OL_A%20Proven%20Formula_1000x1000.png?length=1024&name=20OL_A%20Proven%20Formula_1000x1000.png"
           btnText="OBTENER SESION"
           pathNativation="/entrenadores-personales/alam-rodriguez"
         />
-      </div>
+      </CardsList>
 
       <div className="my-14 py-40 bg-black text-white">
-        <MainTextHead text="CLIENTS RECEIVE" />
+        <MainTextHead text="Las clientes reciben" />
         <div className="flex flex-wrap mb-32">
           <Activity
-            icon="solar:swimming-outline"
-            activity="CUSTOM WORKOUTS"
-            description="Build for your budget and schedule."
+            icon="icon-park-outline:notepad"
+            activity="entrenamiento personalizado"
+            description="Diseñado para tu presupuesto y agenda."
           />
           <Activity
-            icon="solar:swimming-outline"
-            activity="CUSTOM WORKOUTS"
+            icon="tabler:run"
+            activity="Entrenamiento de resistencia"
             description=""
           />
           <Activity
-            icon="solar:swimming-outline"
-            activity="CUSTOM WORKOUTS"
+            icon="lucide:biceps-flexed"
+            activity="ENTRENAMIENTO DE FUERZA"
             description=""
           />
           <Activity
-            icon="solar:swimming-outline"
-            activity="CUSTOM WORKOUTS"
+            icon="iconoir:learning"
+            activity="capacitacion"
             description=""
           />
           <Activity
-            icon="solar:swimming-outline"
-            activity="CUSTOM WORKOUTS"
+            icon="ion:body-outline"
+            activity="flexibilidad"
             description=""
           />
           <Activity
-            icon="solar:swimming-outline"
-            activity="CUSTOM WORKOUTS"
+            icon="carbon:apple-dash"
+            activity="Orientación nutricional"
             description=""
           />
         </div>
         <div className="flex justify-center">
-          <Button className="">GET A FREE TRAINING SESSION</Button>
+          <Button className="">
+            Obten una sesión de entrenamiento personal gratuita
+          </Button>
         </div>
       </div>
     </>

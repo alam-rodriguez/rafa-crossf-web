@@ -6,7 +6,7 @@ const MainTextHead = ({ text }) => {
     <div className="mb-12">
       <CustomHr />
       <h1
-        className="text-white text-center font-bold py-3 text-lg"
+        className="text-white text-center font-bold py-3 text-lg uppercase"
         style={{ letterSpacing: ".2em" }}
       >
         {text}

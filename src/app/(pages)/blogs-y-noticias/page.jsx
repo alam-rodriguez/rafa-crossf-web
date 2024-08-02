@@ -1,4 +1,5 @@
 import Card from "@/components/cards/Card";
+import CardsList from "@/components/cards/CardsList";
 import ImagesMain from "@/components/ImagesMain";
 import React from "react";
 
@@ -10,7 +11,7 @@ const page = () => {
         text="ARTICULOS Y CONSEJOS FITNESS"
       />
 
-      <div className="py-24 px-3 max-w-screen-xl mx-auto">
+      <CardsList>
         <Card
           head="CELEBRATE THE FOURTH OF JULY WITH ONELIFE FITNESS!"
           descripion="As we gear up to celebrate Independence Day, Onelife Fitness wants to ensure you have all the information you need to make the most of your holiday workout schedule. This year, we have special hours to accommodate your festive plans and help you stay on track with your fitness goals."
@@ -67,7 +68,7 @@ const page = () => {
           btnText="LEER MAS"
           pathNativation="/entrenadores-personales/alam-rodriguez"
         />
-      </div>
+      </CardsList>
     </div>
   );
 };

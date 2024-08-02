@@ -12,20 +12,22 @@ import SocialPosts from "@/components/home/SocialPosts";
 
 export default function Home() {
   return (
-    <main className="bg-gray-100">
+    <main className="bg-gray-100 -bg-red-800">
       <Video />
       <MainText
         text={
           <p className="text-lg">
-            Make 2024 your best year ever, all for about $1 a day. Amazing
-            cardio, strength training, boutique studio classes, expansive turf
-            areas, pools and sports. We have more ways to reach your fitness
-            goals than anyone!{" "}
+            Cada día es una nueva oportunidad para superar tus límites y
+            descubrir de qué estás hecho. En nuestro gimnasio, no solo
+            entrenamos cuerpos, sino también mentes y espíritus. Recuerda, cada
+            gota de sudor es un paso más hacia una versión más fuerte, más
+            saludable y más feliz de ti mismo. No se trata solo de llegar a la
+            meta, sino de disfrutar cada paso del camino.
             <span
               className="inline-flex items-center text-blue-400 cursor-pointer"
               // onClick={handleClickJoinUs}
             >
-              Join Us
+              unete a nosotros
               <Icon className="" icon="teenyicons:right-solid" />
             </span>
           </p>

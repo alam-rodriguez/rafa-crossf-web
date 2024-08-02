@@ -15,9 +15,12 @@ const page = () => {
       <MainText
         text={
           <div>
-            <MainTextHead text="FITNESS CLASS DESCRIPTIONS" />
+            <MainTextHead text="DESCRIPCIONES DE LAS CLASES" />
 
-            <p>Learn about group exercise options at your local Onelife.</p>
+            <p>
+              Infórmate sobre las opciones de ejercicios grupales en Rafa crossf
+              Gym
+            </p>
           </div>
         }
         padding="120px 40px"

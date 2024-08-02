@@ -2,10 +2,16 @@ import React from "react";
 import FooterItem from "./FooterItem";
 import CustomHr from "../CustomHr";
 import { Icon } from "@iconify/react";
+import IconFooter from "./IconFooter";
+import logo from "@/assets/images/logo.jpeg";
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="bg-black p-16 text-white block lg:flex uppercase">
+    <footer
+      className="bg-black p-16-p-24 text-white block lg:flex uppercase"
+      style={{ padding: "70px" }}
+    >
       <nav className="mb-7 block sm:flex basis-4/5">
         <FooterItem
           title="gimnacion"
@@ -18,31 +24,23 @@ const Footer = () => {
         <FooterItem
           title="Classes"
           links={[
-            { text: "Class Schedules", path: "/" },
-            { text: "Class Descriptions", path: "/" },
+            { text: "horarios", path: "/" },
+            { text: "descripcion de clases", path: "/" },
           ]}
         />
         <FooterItem
-          title="Training + Sports"
+          title="entrenamiento"
           links={[
-            { text: "Smart Start", path: "/" },
-            { text: "Personal Training", path: "/" },
-            { text: "Explosive Performance", path: "/" },
-            { text: "Zone4", path: "/" },
-            { text: "Mind & Body", path: "/" },
-            { text: "Swimming", path: "/" },
-            { text: "Racquet", path: "/" },
-            { text: "Basketball", path: "/" },
+            { text: "inicio inteligente", path: "/inicio-inteligente" },
+            { text: "entrenador personal", path: "/entrenadores-personales" },
+            { text: "mente y cuerpo", path: "/mente-y-cuerpo" },
           ]}
         />
         <FooterItem
-          title="Support"
+          title="apoyo"
           links={[
-            { text: "Contact Us", path: "/" },
-            { text: "Member Login", path: "/" },
-            { text: "Corporate Login", path: "/" },
-            { text: "Careers", path: "/" },
-            { text: "Blog", path: "/" },
+            { text: "contactanos", path: "/" },
+            { text: "Blog", path: "/blogs-y-noticias" },
             { text: "Privacy Policy", path: "/" },
           ]}
         />
@@ -55,25 +53,38 @@ const Footer = () => {
             className="text-sm py-3 font-bold"
             style={{ letterSpacing: ".2em" }}
           >
-            CONNECT
+            connecion
           </p>
           <CustomHr mxcenter={false} />
         </div>
         <div className="mb-14 flex gap-4 ">
-          <Icon className="text-4xl" icon="ri:facebook-fill" />
-          <Icon className="text-4xl" icon="mdi:youtube" />
-          <Icon className="text-4xl" icon="mdi:instagram" />
-          <Icon className="text-4xl" icon="ri:linkedin-fill" />
+          <IconFooter
+            icon="ri:facebook-fill"
+            link="https://www.facebook.com/Activecrossf"
+          />
+          <IconFooter
+            icon="mdi:youtube"
+            link="https://www.facebook.com/Activecrossf"
+          />
+          <IconFooter
+            icon="mdi:instagram"
+            link="https://www.facebook.com/Activecrossf"
+          />
+          <IconFooter
+            icon="ri:linkedin-fill"
+            link="https://www.facebook.com/Activecrossf"
+          />
         </div>
 
-        <img
+        <Image className="h-20 w-auto mb-3" src={logo} alt="" />
+        {/* <img
           className="h-20 mb-3"
           src="https://marketplace.canva.com/EAFxdcos7WU/1/0/1600w/canva-dark-blue-and-brown-illustrative-fitness-gym-logo-oqe3ybeEcQQ.jpg"
           alt=""
-        />
-        <p className="text-sm tracking-widest">© 2024 Onelife Fitness</p>
+        /> */}
+        <p className="text-sm tracking-widest">© 2024 rafa croosf gym</p>
       </div>
-    </div>
+    </footer>
   );
 };
 

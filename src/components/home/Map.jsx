@@ -4,13 +4,13 @@ import CustomHr from "../CustomHr";
 const Map = () => {
   return (
     <div className="my-28 bg-white m-5">
-      <div className="p-10 pb-5 text-center">
+      <div className="p-10 pb-5 text-center mb-5">
         <CustomHr />
         <p
           className="text-lg font-semibold py-3"
           style={{ letterSpacing: ".2em" }}
         >
-          FIND THE ONELIFE FITNESS GYM NEAR YOU
+          ENCUENTRA RAFA CROOSF GYM EN EL MAPA
         </p>
         <CustomHr />
       </div>

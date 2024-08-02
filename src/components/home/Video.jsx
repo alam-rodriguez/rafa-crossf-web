@@ -5,7 +5,7 @@ const Video = () => {
     // <div>
     <video
       className="w-full h-full object-cover"
-      style={{ maxHeight: 800, minHeight: 308 }}
+      style={{ maxHeight: 800, minHeight: 382 }}
       autoPlay
       muted
       loop

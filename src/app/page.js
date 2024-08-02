@@ -17,12 +17,16 @@ export default function Home() {
       <MainText
         text={
           <p className="text-lg">
-            Cada día es una nueva oportunidad para superar tus límites y
+            {/* Cada día es una nueva oportunidad para superar tus límites y
             descubrir de qué estás hecho. En nuestro gimnasio, no solo
             entrenamos cuerpos, sino también mentes y espíritus. Recuerda, cada
             gota de sudor es un paso más hacia una versión más fuerte, más
             saludable y más feliz de ti mismo. No se trata solo de llegar a la
-            meta, sino de disfrutar cada paso del camino.
+            meta, sino de disfrutar cada paso del camino. */}
+            Cada día es una oportunidad para superar tus límites y descubrir de
+            qué estás hecho. En nuestro gimnasio, entrenamos cuerpos, mentes y
+            espíritus. Cada gota de sudor te acerca a una versión más fuerte y
+            feliz de ti.
             <span
               className="inline-flex items-center text-blue-400 cursor-pointer"
               // onClick={handleClickJoinUs}

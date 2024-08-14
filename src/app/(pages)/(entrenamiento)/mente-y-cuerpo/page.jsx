@@ -1,30 +1,53 @@
 "use client";
 
 import Card from "@/components/cards/Card";
+import CardsList from "@/components/cards/CardsList";
 // import Card from "@/components/home/cards/Card";
 import ImagesMain from "@/components/ImagesMain";
 import MainText from "@/components/main-text/MainText";
 import MainTextHead from "@/components/main-text/MainTextHead";
 import Text from "@/components/main-text/Text";
+import { zusPages } from "@/zustand/pages/zusPages";
 import { Button } from "@nextui-org/react";
-import React from "react";
+import React, { useEffect } from "react";
 
 const page = () => {
+  const { domain, pageMenteYCuerpo } = zusPages();
+
+  useEffect(() => {
+    console.log(pageMenteYCuerpo);
+  }, [pageMenteYCuerpo]);
+
   return (
     <div>
       <ImagesMain
-        img="https://www.onelifefitness.com/hubfs/191117_OL_SS_Mind_Body_0372.jpg"
-        text="CLASES DE PILATES, YOGA Y BARRE"
+        img={
+          pageMenteYCuerpo.backgroundImage &&
+          domain + pageMenteYCuerpo.backgroundImage.url
+        }
+        text={pageMenteYCuerpo.imageTitle}
       />
       <MainText
         text={
           <div>
-            <MainTextHead text="Medita con nosotros y deja que tus preocupaciones se alejen." />
+            <MainTextHead text={pageMenteYCuerpo.title} />
 
             <Text
               text={
                 <>
-                  <span>
+                  {pageMenteYCuerpo.subtitle &&
+                    pageMenteYCuerpo.subtitle.map((text, i) => (
+                      <>
+                        <span>{text.children[0].text}</span>
+                        {i + 1 < pageMenteYCuerpo.subtitle.length && (
+                          <>
+                            <br />
+                            <br />
+                          </>
+                        )}
+                      </>
+                    ))}
+                  {/* <span>
                     Rafa Cross Gym cree que una mente fuerte conduce a un cuerpo
                     fuerte. Conecta tu cerebro con tu entrenamiento en nuestras
                     clases Mente+Cuerpo. ¡Inscríbete en una clase ahora!
@@ -40,7 +63,7 @@ const page = () => {
                     negatividad. Ofrecemos clases de yoga, pilates y barra en
                     una amplia gama de clases grupales para todos los niveles y
                     objetivos.
-                  </span>
+                  </span> */}
                 </>
               }
             />
@@ -50,7 +73,22 @@ const page = () => {
         padding="120px 40px"
       />
 
-      <div className="py-24 px-3 max-w-screen-xl mx-auto">
+      <CardsList>
+        {pageMenteYCuerpo.menteYCuerpo &&
+          pageMenteYCuerpo.menteYCuerpo.map((card, i) => (
+            <Card
+              key={card.id}
+              head={card.title}
+              descripion={card.subtitle}
+              imageSide={(i + 1) % 2 == 0 ? "right" : "left"}
+              imageUrl={domain + card.imageCard.url}
+              btnText=""
+              pathNativation=""
+            />
+          ))}
+      </CardsList>
+
+      {/* <div className="py-24 px-3 max-w-screen-xl mx-auto">
         <Card
           head="PILATES"
           descripion="Pilates es un sistema de ejercicios diseñado para fortalecer, alargar y equilibrar el cuerpo. Ofrecemos clases de Pilates Mat a través de nuestro Programa de Fitness Grupal y sesiones con aparatos a través de nuestro programa de Pilates."
@@ -100,7 +138,7 @@ const page = () => {
           btnText=""
           pathNativation=""
         />
-      </div>
+      </div> */}
     </div>
   );
 };

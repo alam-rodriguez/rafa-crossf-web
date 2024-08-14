@@ -17,6 +17,7 @@ import {
 } from "@nextui-org/react";
 
 import Image from "next/image";
+import { zusMainInformation } from "@/zustand/main-information/zusMainInformation";
 // import dynamic from "next/dynamic";
 
 // const Icon = dynamic(() => import("@iconify/react"), { ssr: false });
@@ -40,36 +41,37 @@ const entrenamientos = [
   { name: "Relajacion y recuperacion", path: "/relajacion" },
 ];
 
-const conexiones = [
-  { name: "Blogs y noticias", path: "/blogs-y-noticias" },
-  {
-    name: "whassap",
-    path: "https://www.facebook.com/Activecrossf",
-    target: "_blank",
-  },
-  {
-    name: "Instagram",
-    path: "https://www.facebook.com/Activecrossf",
-    target: "_blank",
-  },
-  {
-    name: "Facebook",
-    path: "https://www.facebook.com/Activecrossf",
-    target: "_blank",
-  },
-  {
-    name: "TikTok",
-    path: "https://www.facebook.com/Activecrossf",
-    target: "_blank",
-  },
-  {
-    name: "Linkedin",
-    path: "https://www.facebook.com/Activecrossf",
-    target: "_blank",
-  },
-];
-
 const Header = () => {
+  const { imageApp, redes } = zusMainInformation();
+
+  const conexiones = [
+    { name: "Blogs y noticias", path: "/blogs-y-noticias" },
+    {
+      name: "whassap",
+      path: `https://wa.me/${redes.whatsapp}?text=deseo%20inscribirme%20en%20rafa%20crossf%20gym`,
+      target: "_blank",
+    },
+    {
+      name: "Instagram",
+      path: `https://www.instagram.com/${redes.instagram}`,
+      target: "_blank",
+    },
+    {
+      name: "Facebook",
+      path: `https://www.facebook.com/${redes.facebook}`,
+      target: "_blank",
+    },
+    {
+      name: "TikTok",
+      path: `https://www.tiktok.com/@${redes.tiktok}`,
+      target: "_blank",
+    },
+    {
+      name: "youtube",
+      path: `https://www.youtube.com/@${redes.youtube}`,
+      target: "_blank",
+    },
+  ];
   const router = useRouter();
 
   const handleClicGoHome = () => router.push("/");
@@ -108,15 +110,23 @@ const Header = () => {
     setShowSubMenu(false);
   };
 
+  useEffect(() => {
+    console.log(imageApp);
+  }, [imageApp]);
+
   if (width < 1050) {
+    // const imageApp = "http://localhost:3000/media/ComiApp.png";
+
     return (
       <nav className="fixed w-full z-10">
         <div className="bg-black flex justify-between items-center text-white px-6  z-20">
-          <Image
+          <img
             onClick={handleClicGoHome}
             className="h-20 w-auto"
             // src="https://marketplace.canva.com/EAFxdcos7WU/1/0/1600w/canva-dark-blue-and-brown-illustrative-fitness-gym-logo-oqe3ybeEcQQ.jpg"
-            src={logo}
+            src={imageApp}
+            // height={100}
+            // width={100}
             alt=""
           />
 
@@ -184,11 +194,12 @@ const Header = () => {
     return (
       <nav className="bg-black flex justify-between items-center text-white px-6 fixed w-full z-10">
         <div>
-          <Image
+          <img
             onClick={handleClicGoHome}
             className="h-20 w-auto"
             // src="https://th.bing.com/th/id/OIG4.o_N6LZyHBKYgLGNeF6di?pid=ImgGn"
-            src={logo}
+            width={100}
+            src={imageApp}
             alt=""
           />
         </div>

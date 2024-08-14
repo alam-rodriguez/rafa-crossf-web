@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import ImagesMain from "@/components/ImagesMain";
 import MainText from "@/components/main-text/MainText";
@@ -7,8 +9,11 @@ import { Button } from "@nextui-org/react";
 import Card from "@/components/cards/Card";
 import Activity from "@/components/home/activities/Activity";
 import CardsList from "@/components/cards/CardsList";
+import { zusPages } from "@/zustand/pages/zusPages";
 
 const page = () => {
+  const { personalsTrainers, domain } = zusPages();
+
   return (
     <>
       <ImagesMain
@@ -30,7 +35,23 @@ const page = () => {
       />
 
       <CardsList>
-        <Card
+        {personalsTrainers.map((trainer, i) => {
+          console.log(trainer);
+          return (
+            <Card
+              key={trainer.id}
+              head={trainer.name}
+              descripion={trainer.description}
+              imageSide={(i + 1) % 2 == 0 ? "right" : "left"}
+              imageUrl={domain + trainer.trainerImage.url}
+              btnText="OBTENER SESION"
+              pathNativation={`/entrenadores-personales/${trainer.name
+                .split(" ")
+                .join("-")}`}
+            />
+          );
+        })}
+        {/* <Card
           head="Alam Rodriguez"
           descripion="Alam Rodríguez es un entrenador personal altamente respetado y reconocido en la industria del fitness. Con más de una década de experiencia, Alam ha dedicado su vida a ayudar a personas de todas las edades y niveles de condición física a alcanzar sus objetivos de salud y bienestar."
           imageSide="left"
@@ -53,7 +74,7 @@ const page = () => {
           imageUrl="https://2094550.fs1.hubspotusercontent-na1.net/hub/2094550/hubfs/20OL_A%20Proven%20Formula_1000x1000.png?length=1024&name=20OL_A%20Proven%20Formula_1000x1000.png"
           btnText="OBTENER SESION"
           pathNativation="/entrenadores-personales/alam-rodriguez"
-        />
+        /> */}
       </CardsList>
 
       <div className="my-14 py-40 bg-black text-white">

@@ -1,6 +1,9 @@
+import { zusMainInformation } from "@/zustand/main-information/zusMainInformation";
 import React from "react";
 
 const SocialPosts = () => {
+  const { nameApp } = zusMainInformation();
+
   return (
     <div className="text-center py-14">
       <div className="mb-7 ">
@@ -9,10 +12,10 @@ const SocialPosts = () => {
           style={{ height: 2 }}
         />
         <p
-          className="text-xs sm:text-base md:text-3xl py-6 font-normal uppercase"
+          className="text-xs-sm:text-base text-base md:text-3xl py-6 font-normal uppercase"
           style={{ letterSpacing: ".4em" }}
         >
-          #rafacrossfgym
+          #{nameApp.split(" ").join("")}
         </p>
         <hr
           className="w-28 border-0 bg-gray-300 mx-auto"

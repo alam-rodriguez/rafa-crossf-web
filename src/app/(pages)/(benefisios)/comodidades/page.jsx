@@ -13,8 +13,16 @@ import MainTextHead from "@/components/main-text/MainTextHead";
 import Text from "@/components/main-text/Text";
 import CardsList from "@/components/cards/CardsList";
 import Card from "@/components/cards/Card";
+import usePages from "@/hooks/usePages/usePages";
+import { zusPages } from "@/zustand/pages/zusPages";
 
 const page = () => {
+  const { pageComodidades, domain } = zusPages();
+
+  useEffect(() => {
+    console.log(pageComodidades);
+  }, [pageComodidades]);
+
   const { width } = useWidth();
 
   useEffect(() => {
@@ -24,23 +32,38 @@ const page = () => {
   return (
     <div>
       <ImagesMain
-        img="https://www.onelifefitness.com/hubfs/shutterstock_793611454.png"
-        text="COMODIDADES"
+        img={
+          pageComodidades.backgroundImage &&
+          domain + pageComodidades.backgroundImage.url
+        }
+        text={pageComodidades.imageTitle}
       />
       {/* <ImageBenefits /> */}
 
       <MainText
         text={
           <div>
-            <MainTextHead text="No es un gimnasio promedio" />
-            <Text text="Rafa Croosf gym ofrece una experiencia de fitness de primera calidad que va más allá de tu entrenamiento. Nuestro gym ofrece equipos de gimnasio de última generación, programas de entrenamiento especializados, clases increíbles y comodidades para alcanzar tus objetivos." />
+            <MainTextHead text={pageComodidades.title} />
+            <Text text={pageComodidades.subtitle} />
           </div>
         }
         padding="120px 40px"
       />
 
       <CardsList>
-        <Card
+        {pageComodidades.comodidades &&
+          pageComodidades.comodidades.map((comodidad, i) => (
+            <Card
+              key={comodidad.id}
+              head={comodidad.title}
+              descripion={comodidad.subtitle}
+              imageSide={(i + 1) % 2 === 0 ? "right" : "left"}
+              imageUrl={domain + comodidad.imageComodidad.url}
+              btnText="EXPLORAR"
+              pathNativation=""
+            />
+          ))}
+        {/* <Card
           head="esperiencia de estudio"
           descripion="Tenemos clases para todos los gustos y objetivos. Renueva tu rutina con nuestras clases energizantes en el estudio y aprovecha al máximo tu entrenamiento con la camaradería y el apoyo de los demás."
           imageSide="left"
@@ -87,7 +110,7 @@ const page = () => {
           imageUrl="https://2094550.fs1.hubspotusercontent-na1.net/hub/2094550/hubfs/Trainer.png?length=1024&name=Trainer.png"
           btnText="EXPLORAR"
           pathNativation=""
-        />
+        /> */}
       </CardsList>
 
       {/* <TextMainBenefits /> */}

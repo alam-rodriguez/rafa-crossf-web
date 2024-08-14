@@ -1,12 +1,21 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import FooterItem from "./FooterItem";
 import CustomHr from "../CustomHr";
 import { Icon } from "@iconify/react";
 import IconFooter from "./IconFooter";
 import logo from "@/assets/images/logo.jpeg";
 import Image from "next/image";
+import { zusMainInformation } from "@/zustand/main-information/zusMainInformation";
 
 const Footer = () => {
+  const { nameApp, imageApp, redes } = zusMainInformation();
+
+  useEffect(() => {
+    console.log(redes);
+  }, [redes]);
+
   return (
     <footer
       className="bg-black p-16-p-24 text-white block lg:flex uppercase"
@@ -60,29 +69,29 @@ const Footer = () => {
         <div className="mb-14 flex gap-4 ">
           <IconFooter
             icon="ri:facebook-fill"
-            link="https://www.facebook.com/Activecrossf"
-          />
-          <IconFooter
-            icon="mdi:youtube"
-            link="https://www.facebook.com/Activecrossf"
+            link={`https://www.facebook.com/${redes.facebook}`}
           />
           <IconFooter
             icon="mdi:instagram"
-            link="https://www.facebook.com/Activecrossf"
+            link={`https://www.instagram.com/${redes.instagram}`}
           />
           <IconFooter
-            icon="ri:linkedin-fill"
-            link="https://www.facebook.com/Activecrossf"
+            icon="mdi:youtube"
+            link={`https://www.youtube.com/@${redes.youtube}`}
+          />
+          <IconFooter
+            icon="ic:baseline-whatsapp"
+            link={`https://wa.me/${redes.whatsapp}?text=deseo%20inscribirme%20en%20rafa%20crossf%20gym`}
           />
         </div>
 
-        <Image className="h-20 w-auto mb-3" src={logo} alt="" />
+        <img className="h-20 w-auto mb-3" src={imageApp} alt="" />
         {/* <img
           className="h-20 mb-3"
           src="https://marketplace.canva.com/EAFxdcos7WU/1/0/1600w/canva-dark-blue-and-brown-illustrative-fitness-gym-logo-oqe3ybeEcQQ.jpg"
           alt=""
         /> */}
-        <p className="text-sm tracking-widest">© 2024 rafa croosf gym</p>
+        <p className="text-sm tracking-widest">© 2024 {nameApp}</p>
       </div>
     </footer>
   );

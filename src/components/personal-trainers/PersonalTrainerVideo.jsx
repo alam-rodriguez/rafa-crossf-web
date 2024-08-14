@@ -1,15 +1,10 @@
-"use client";
-
 import React from "react";
-import CustomHr from "../CustomHr";
 import useWidth from "@/hooks/useWidth/useWidth";
+import CustomHr from "../CustomHr";
 import { Button } from "@nextui-org/react";
 import { Icon } from "@iconify/react";
-import { zusMainInformation } from "@/zustand/main-information/zusMainInformation";
 
-const VideoSecundary = () => {
-  const { secondVideo } = zusMainInformation();
-
+const PersonalTrainerVideo = ({ video, text, btnText = "EXPLORAR" }) => {
   const { width } = useWidth();
 
   return (
@@ -27,7 +22,7 @@ const VideoSecundary = () => {
           style={{ maxHeight: 2842.5 }}
           // src="https://cdn2.hubspot.net/hubfs/2094550/3rd%20edit%204_26-1.mp4"
           // src="https://2094550.fs1.hubspotusercontent-na1.net/hubfs/2094550/OL_OTT_30_final_1920x1080_NO%20AUDIO.%20(1)-1.mp4"
-          src={secondVideo}
+          src={video}
         ></video>
         <div
           className="text-center relative mx-auto"
@@ -45,7 +40,7 @@ const VideoSecundary = () => {
               }`}
               style={{ letterSpacing: ".4em" }}
             >
-              TU VIAJE EMPIEZA AQUI
+              {text}
             </h1>
             <CustomHr width={110} />
           </div>
@@ -54,7 +49,7 @@ const VideoSecundary = () => {
             variant="bordered"
             style={{ border: "1px solid #fff", borderRadius: 3 }}
           >
-            EXPLORAR
+            {btnText}
             <Icon className="ms-1" icon="teenyicons:right-solid" />
           </Button>
         </div>
@@ -63,4 +58,4 @@ const VideoSecundary = () => {
   );
 };
 
-export default VideoSecundary;
+export default PersonalTrainerVideo;

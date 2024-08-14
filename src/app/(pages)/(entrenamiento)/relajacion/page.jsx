@@ -1,25 +1,49 @@
+"use client";
+
 import ImagesMain from "@/components/ImagesMain";
 import MainText from "@/components/main-text/MainText";
 import MainTextHead from "@/components/main-text/MainTextHead";
 import Text from "@/components/main-text/Text";
-import React from "react";
+import { zusPages } from "@/zustand/pages/zusPages";
+import React, { useEffect } from "react";
 
 const page = () => {
+  const { domain, pageRelajacion } = zusPages();
+
+  useEffect(() => {
+    console.log(pageRelajacion);
+  }, [pageRelajacion]);
+
   return (
     <div>
       <ImagesMain
-        img="https://www.onelifefitness.com/hubfs/24OL-hydrowebsite1440x600.png"
-        text="Relajación y recuperación"
+        img={
+          pageRelajacion.backgroundImage &&
+          domain + pageRelajacion.backgroundImage.url
+        }
+        text={pageRelajacion.imageTitle}
       />
       <MainText
         text={
           <div>
-            <MainTextHead text="camas y masajes" />
+            <MainTextHead text={pageRelajacion.title} />
 
             <Text
               text={
                 <>
-                  <span>
+                  {pageRelajacion.subtitle &&
+                    pageRelajacion.subtitle.map((text, i) => (
+                      <>
+                        <span>{text.children[0].text}</span>
+                        {i + 1 < pageRelajacion.subtitle.length && (
+                          <>
+                            <br />
+                            <br />
+                          </>
+                        )}
+                      </>
+                    ))}
+                  {/* <span>
                     Los masajes en nuestro gimnasio son el complemento perfecto
                     para tu rutina de entrenamiento. Ayudan a relajar los
                     músculos, reducir el estrés y acelerar la recuperación
@@ -37,7 +61,7 @@ const page = () => {
                     una sesión revitalizante y siente la diferencia en tu
                     rendimiento y bienestar. ¡Dale a tu cuerpo el cuidado que
                     merece!
-                  </span>
+                  </span> */}
                 </>
               }
             />

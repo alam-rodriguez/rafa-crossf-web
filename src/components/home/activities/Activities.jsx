@@ -2,8 +2,11 @@ import React from "react";
 import { Icon } from "@iconify/react";
 import Activity from "./Activity";
 import { Button } from "@nextui-org/react";
+import { zusMainInformation } from "@/zustand/main-information/zusMainInformation";
 
 const Activities = () => {
+  const { monthlyPrice } = zusMainInformation();
+
   return (
     <div
       className="bg-black my-14 py-40 text-white mx-auto"
@@ -40,15 +43,15 @@ const Activities = () => {
           description="Fortalece el cuerpo, medita y calma la mente."
         />
         <Activity
-          icon="ion:body-outline"
-          activity="flexibilidad"
-          description="Who knew fun and fitness could be so refreshing?"
+          icon="carbon:apple-dash"
+          activity="plan nutricional"
+          description="Hacemos tu plan nutricional ideal"
         />
 
         <Activity
-          icon="iconoir:gym"
-          activity="SWIMMING"
-          description="Who knew fun and fitness could be so refreshing?"
+          icon="hugeicons:equipment-gym-03"
+          activity="maquinas"
+          description="Tenemos maquinas de ultima generacion."
         />
 
         <Activity
@@ -66,7 +69,7 @@ const Activities = () => {
           TODO ESTO Y MUCHO MÁS DESDE SÓLO
         </p>
         <p className="mb-7">
-          <span className="text-7xl md:text-8xl">$1,200</span>{" "}
+          <span className="text-7xl md:text-8xl">${monthlyPrice}</span>{" "}
           <span className="text-3xl md:text-5xl tracking-wider">
             /MENSUALES
           </span>

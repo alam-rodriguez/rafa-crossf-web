@@ -21,6 +21,7 @@ const page = () => {
 
   useEffect(() => {
     console.log(pageComodidades);
+    console.log(domain);
   }, [pageComodidades]);
 
   const { width } = useWidth();
